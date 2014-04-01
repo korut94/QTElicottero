@@ -15,10 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         controlwindow.cpp \
     stick.cpp \
-    button.cpp
+    button.cpp \
+    screencamera.cpp
 
 HEADERS  += controlwindow.h \
     stick.h \
-    button.h
+    button.h \
+    screencamera.h
 
 FORMS    += controlwindow.ui

@@ -3,20 +3,21 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QDebug>
+
+enum Verso{ frecciaLX, frecciaRX, frecciaTX, frecciaDX  };
 
 class Button : public QWidget
 {
     Q_OBJECT
 
     public:
-        explicit Button( QRect & pos, QWidget *parent = 0 );
-
-    signals:
-
-    public slots:
+        explicit Button( QRect & pos, Verso verso, QWidget *parent = 0 );
 
     private:
         QLabel * button;
+
+        Verso direction;
 };
 
 #endif // BUTTON_H

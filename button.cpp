@@ -1,11 +1,29 @@
 #include "button.h"
 
-Button::Button( QRect & geo, QWidget * parent ) :
+Button::Button( QRect & geo, Verso verso, QWidget * parent ) :
     QWidget(parent)
 {
-    button = new QLabel();
+    button = new QLabel( parent );
     button->setGeometry( geo );
 
-    button->setStyleSheet( "QLabel{ background-color : red;}" );
-    button->setParent( parent );
+    direction = verso;
+
+    QString dirPic = "GUIObject/";
+
+    switch( direction )
+    {
+        case frecciaLX: dirPic += "frecciaLX";
+                        break;
+        case frecciaRX: dirPic += "frecciaRX";
+                        break;
+        case frecciaTX: dirPic += "frecciaTX";
+                        break;
+        case frecciaDX: dirPic += "frecciaDX";
+                        break;
+    }
+
+    QImage imgBtnSX( dirPic );
+
+    if( imgBtnSX.isNull() ) qDebug() << "Errore caricamento immagine" << endl;
+    else button->setPixmap( QPixmap::fromImage( imgBtnSX ) );
 }

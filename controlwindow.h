@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "stick.h"
 #include "button.h"
+#include "screencamera.h"
 
 namespace Ui {
 class ControlWindow;
@@ -14,8 +15,8 @@ class ControlWindow : public QMainWindow
     Q_OBJECT
 
    public:
-    explicit ControlWindow(QWidget *parent = 0);
-    ~ControlWindow(); 
+        explicit ControlWindow(QWidget *parent = 0);
+        ~ControlWindow();
 
    protected:
         void mousePressEvent( QMouseEvent * event );
@@ -28,6 +29,8 @@ class ControlWindow : public QMainWindow
 
    private:
     Ui::ControlWindow * ui;
+
+    ScreenCamera * camera;
 
     Stick * joyStick;
 

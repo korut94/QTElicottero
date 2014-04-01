@@ -20,10 +20,6 @@ class Stick : public QWidget
     private:
         QLabel * baseStick;
         QLabel * joyStick;
-<<<<<<< HEAD
-=======
-        
->>>>>>> 271419a5fb0f03af065de45aa1e9084866b3cd26
         QPoint * origPosStick;
         QSize * sizeStick;
 };
