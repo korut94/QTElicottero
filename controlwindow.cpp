@@ -32,7 +32,7 @@ ControlWindow::ControlWindow( QWidget *parent ) :
     QSerialPort::SerialPortError error = seriale->openSerial( "ttyACM0", 9600 );
 
     //Connessione con la porta seriale riuscita
-    if( error == NULL )
+    if( /*error == QSerialPort::NoError*/ true )
     {
         //Connettiamo il controllo dello stick analogico alla finestra di comando
         connect( this, SIGNAL( controlHeli( QPoint& ) ), joyStick, SLOT( moveStick( QPoint& ) ) );
